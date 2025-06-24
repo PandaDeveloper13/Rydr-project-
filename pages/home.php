@@ -3,50 +3,6 @@ require $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/static-data.php';
 
-function getCarImage($carName) {
-    $imageMap = [
-        'Toyota Yaris' => 'car_0.svg',
-        'Volkswagen Polo' => 'Volkswagen Polo.jpg',
-        'Ford Transit' => 'Ford Transit.jpg',
-        'Skoda Octavia' => 'car_2.svg',
-        'Peugeot 208' => 'Peugeot 208.avif',
-        'Mercedes-Benz Sprinter' => 'car_6.svg',
-        'Audi A4' => 'car_4.svg',
-        'BMW X5' => 'car_5.svg',
-        'Renault Clio' => 'car_6.svg',
-        'Porsche 911' => 'car_7.svg',
-        'Fiat 500' => 'car_8.svg',
-        'Volkswagen Transporter' => 'Volkswagen Transporter.jpg',
-        'Tesla Model 3' => 'car_9.svg',
-        'Volvo XC40' => 'car_10.svg',
-        'Renault Master' => 'Renault Master.jpg',
-        'Kia Niro' => 'car_11.svg',
-        'Hyundai KONA Electric' => 'car_0.svg',
-        'Opel Vivaro' => 'Opel Vivaro.webp',
-        'Nissan Leaf' => 'Nissan Leaf.avif',
-        'Citroën C3' => 'car_2.svg',
-        'Ford Focus' => 'Ford Focus.jpg',
-        'Ford Transit Custom' => 'Ford Transit Custom.webp',
-        'Citroën Jumper' => 'Citroën Jumper.jpg',
-        'Peugeot Boxer' => 'Peugeot Boxer.jpg',
-        'Iveco Daily' => 'Iveco Daily.jpg',
-        'Fiat Ducato' => 'Fiat Ducato.WebP',
-        'Toyota Proace' => 'Toyota Proace.jpg',
-        'Nissan NV400' => 'Nissan NV400.jpeg',
-        'MAN TGE' => 'MAN TGE.webp',
-        'Volkswagen Crafter' => 'Volkswagen Crafter.jpg',
-        'Mercedes-Benz Citan' => 'Mercedes-Benz Citan.jpg',
-        'Renault Kangoo' => 'Renault kangaroo.png',
-        'Ford Transit Connect' => 'Ford Transit Connect.webp',
-        'Opel Combo' => 'Opel Combo.webp',
-        'Peugeot Partner' => 'Peugeot Partner.avif',
-        'Citroën Berlingo Van' => 'Citroën Berlingo Van.avif',
-        'Fiat Talento' => 'Fiat Talento.jpg',
-        'Nissan NV300' => 'Nissan NV300.jpg',
-        'Toyota Hilux' => 'Toyota Hilux.jpg',
-        'Ford Ranger' => 'Ford Ranger.jpeg',
-        'Volkswagen Amarok' => 'Volkswagen Amarok.jpg'
-    ];
     
     if (isset($imageMap[$carName])) {
         return '/assets/images/products/' . $imageMap[$carName];
@@ -90,7 +46,7 @@ $popular_cars = array_slice($cars, 0, 5);
                     </div>
 
                     
-                    <img src="<?= getCarImage($car['Auto']) ?>" alt="<?= htmlspecialchars($car['Auto']) ?>">
+                  <img src="../assets/images/products/Car_<?= $car['Id'] ?>.png" alt="<?= htmlspecialchars($car['Auto']) ?>">
 
                     <div class="car-specification">
                         <span><img src="../assets/images/icons/gas-station.svg" alt=""><?= $car['Liter'] ?>L</span>
